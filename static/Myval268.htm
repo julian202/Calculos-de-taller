@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Whitworth Formulas, Diagrama, Calculadora</title>
+	<meta name="description" content="Whitworth Formulas, Diagrama, Calculadora">
+	<meta name="keywords" content="Whitworth, Formulas, Diagrama, Calculadora">
+	<meta name="author" content="Whitworth Formulas, Diagrama, Calculadora">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	body {
+		font-size: 130%;
+	}
+	.maindiv {
+		text-align:center;
+	}
+	h1{
+		margin-top: 5px;
+		text-decoration: underline;
+	}
+	.english {margin-right: 5%; margin-top: 0px;margin-bottom: 0px;text-align:right;}
+	a {
+		color: #337ab7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #000000;
+		background-color: #f2f3f3;
+	}
+	img {
+		max-width: 100%;
+	}
+	@media only screen and (min-width: 600px) {
+		img {
+			max-width: 50%;
+		}
+	}	
+	th {
+		text-align: left;
+		padding: 0 15px;
+	}	
+	.formula {
+		font-weight: bold;
+		font-size: 150%;
+		
+	}
+	input {
+		text-align: center;
+		margin-top: 10px;
+		font-size: 110%;	
+	}
+	.nav{
+		display:inline-block; width:40%;
+	}
+	table {
+		margin-left:auto; 
+		margin-right:auto;
+	}
+	table h3 {
+		margin-top:0.7em; 
+	} 
+	.btn{
+		padding: 4px;
+		font-size: 100%;
+		border-radius: 6px;
+		color: #fff;
+		background-color: #5bc0de;
+		border-color: #46b8da;
+		border: 1px solid transparent;
+		margin-bottom: 40px;
+		
+	}
+	.smlbtn{
+		margin-bottom: 5px;
+		padding: 0px 8px;
+	}
+	.largebtn{
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 5px;
+	}
+	
+	.btn:hover {
+		background-color: #31b0d5;
+		border-color: #269abc;
+		cursor: pointer;
+	}
+	.header{
+			display: inline-block;
+			width: 45%;
+	}
+	.ir {text-align:right;}
+	.taller {text-align:left;}
+	.underline {text-decoration: underline;}
+	.feedback{text-align:right;font-size:1em;margin-right: 5em;}
+	</style>
+</head>
+<body>
+<div class="maindiv">
+	<div class="header taller">
+		<a href="http://calculos-de-taller.com/" class="btn smlbtn">Ir a Indice de Contenidos</a>
+	</div>
+	<div class="header ir">
+		<form name="input" onsubmit="javascript:changeTextDirect(document.input.topictextbox.value); return false;"><!-- return false is to prevent reload of page -->
+			<label>Página:</label>
+			<input type="text" id="goToTextBox" name="topictextbox"  maxlength="3" size="3" value="271">
+			<input type="submit" value="Ir"  class="btn smlbtn"> 
+		</form >
+	</div>	
+	<div >
+		<div class="nav" >
+			<button onclick="previous()" class="btn largebtn"> &lt Anterior</button>
+		</div>
+		<div class="nav" >
+			<button onclick="next()" class="btn largebtn">Siguiente &gt  </button>
+		</div>
+	</div>
+
+
+	<div class="english" >
+		<a href="http://machine-shop-formulas.com/whitworth">English</a>
+	</div>
+	<h1>Rosca con filete Whitworth</h1>
+	<h4>Detalle ampliado para poder apreciar su ajuste, y fórmulas generales de útil aplicación</h4>
+	<img src="static/libro_268b.jpg" alt="tablas, calculos, taller"   /><br>
+	
+
+	<h2 class="underline">Designación:</h2>
+
+	<table>
+		<tr>
+			<th><h3><strong>P</strong>  = Paso en mm.</h3></th>
+			<th><h3><strong>N</strong>  = Número de filetes por pulgada inglesa.</h3></th>
+		</tr>
+		<tr>
+			<th><h3><strong>H</strong>  = Altura del triángulo generador.</h3></th>
+			<th><h3><strong>r</strong>  = Radio</h3></th>
+		</tr>
+		<tr>
+			<th><h3><strong>D</strong>  =	Profundidad del filete.</h3></th>
+			<th><h3><strong>DE</strong> = Diámetro del tornillo.</h3></th>
+		</tr>
+		<tr>
+			<th><h3><strong>DM</strong> = Diámetro de flancos o medio. </h3></th>
+			<th><h3><strong>DF</strong> = Diámetro de fondo e interior.</h3></th>
+		</tr>
+	</table>
+
+	<h2 class="underline">Fórmulas y Calculadoras:</h2>
+	 <div class="formula">P = 25,4 / N </div>
+	 <div>
+	 <input id="P" type="text" name="topictextbox" maxlength="7" size="7" value="P"> = 25,4 /
+	 <input id="N" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular P" onclick="calculate('P','N');">
+	<input type="submit" class="btn" value="Calcular N" onclick="calculate('N','P');"></div>
+
+	<div class="formula">D = 0,6403 * P </div>
+	 <div>
+	 <input id="D" type="text" name="topictextbox" maxlength="7" size="7" value="D"> = 0,6403 *
+	 <input id="P2" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular D" onclick="calculate('D','P2');">
+	<input type="submit" class="btn" value="Calcular P" onclick="calculate('P2','D');"></div>
+
+	<div class="formula">D = 16,256 / N </div>
+	 <div>
+	 <input id="D2" type="text" name="topictextbox" maxlength="7" size="7" value="D"> = 16,256 /
+	 <input id="N2" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular D" onclick="calculate('D2','N2');">
+	<input type="submit" class="btn" value="Calcular N" onclick="calculate('N2','D2');"></div>
+
+	<div class="formula">H = 0,9605 * P </div>
+	 <div>
+	 <input id="H" type="text" name="topictextbox" maxlength="7" size="7" value="H"> = 0,9605 *
+	 <input id="P3" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular H" onclick="calculate('H','P3');">
+	<input type="submit" class="btn" value="Calcular P" onclick="calculate('P3','H');"></div>
+
+	<div class="formula">H = 24,384 / N </div>
+	 <div>
+	 <input id="H2" type="text" name="topictextbox" maxlength="7" size="7" value="H"> = 24,384 /
+	 <input id="N3" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular H" onclick="calculate('H2','N3');">
+	<input type="submit" class="btn" value="Calcular N" onclick="calculate('N3','H2');"></div>
+
+	<div class="formula">r = 0,1373 * P </div>
+	 <div>
+	 <input id="r" type="text" name="topictextbox" maxlength="7" size="7" value="r"> = 0,1373 *
+	 <input id="P4" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+	 </div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular r" onclick="calculate('r','P4');">
+	 <input type="submit" class="btn" value="Calcular P" onclick="calculate('P4','r');"></div>
+
+	<div class="formula">DM = (DE + DF)/2 </div>
+	 <div>
+	 <input id="DM" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = (
+	 <input id="DE" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> +
+	 <input id="DF" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> ) / 2 
+	</div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular DM" onclick="calculate2('DM','DE','DF');">
+	 </div>
+	 
+	 <div class="formula">DM = DE - D </div>
+	 <div>
+	 <input id="DM2" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = 
+	 <input id="DE2" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> -
+	 <input id="D3" type="text" name="topictextbox" maxlength="7" size="7" value="D"> 
+	</div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular DM" onclick="calculate2('DM2','DE2','D3');">
+	 </div>
+	 
+	 <div class="formula">DM = DE - (16,256 / N) </div>
+	 <div>
+	 <input id="DM3" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = 
+	 <input id="DE3" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (16,256 / 
+	 <input id="N4" type="text" name="topictextbox" maxlength="7" size="7" value="N">)
+	</div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular DM" onclick="calculate2('DM3','DE3','N4');">
+	 </div>
+	 
+	 
+	 <div class="formula">DF = DE - (1,28 * P) </div>
+	<div>
+	 <input id="DF2" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> = 
+	 <input id="DE4" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (1,28 *
+	 <input id="P5" type="text" name="topictextbox" maxlength="7" size="7" value="P"> ) 
+	</div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular DF" onclick="calculate2('DF2','DE4','P5');">
+	</div>
+	 
+
+	<div class="formula">DF = DE - (32,512 / N) </div>
+	<div>
+	 <input id="DF3" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> = 
+	 <input id="DE5" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (32,512 / 
+	 <input id="N5" type="text" name="topictextbox" maxlength="7" size="7" value="N">)
+	</div>
+	 <div class="divinput"><input type="submit" class="btn" value="Calcular DF" onclick="calculate2('DF3','DE5','N5');">
+	</div>
+	<hr>
+	<div class=feedback><p>Si tiene alguna sugerencia esribanos a: <a target=_top href="mailto:casillasmaquinas@gmail.com?Subject=Sugerencia" target=_top>casillasmaquinas@gmail.com</a></p></div><div class=ad></div>
+</div>
+ <script  type="text/javascript">	
+	function next(){
+		window.location.href = "http://calculos-de-taller.com/n=272";
+		//ga('send', 'event', 'button', 'arrow', 'Num'+myval+'EndNum');
+	}
+	function previous(){
+		window.location.href = "http://calculos-de-taller.com/n=270";
+		//ga('send', 'event', 'button', 'arrow', 'Num'+myval+'EndNum');
+	}
+	function changeTextDirect(str){
+		//ga('send', 'event', 'button', 'textbox', 'Num'+str+'EndNum');
+		window.location.href = "http://calculos-de-taller.com/n="+str;
+	}
+	function calculate(x,y){
+		yVal=document.getElementById(y).value;
+		yValContainsComma=yVal.includes(",");
+		yValContainsDot=yVal.includes(".");	
+		if (yValContainsComma){
+			yVal=yVal.replace(/,/g , ".");
+		}	
+		if ((x=="P" && y=="N")||(x=="N" && y=="P")){ //P = 25,4 / N
+			xVal=25.4/yVal;
+		}			
+		if (x=="D" && y=="P2"){ //D = 0,6403 * P 
+			xVal=0.6403*yVal;
+		}
+		if (x=="P2" && y=="D"){
+			xVal=yVal/0.6403;
+		}
+		if ((x=="D2" && y=="N2")||(x=="N2" && y=="D2")){ //D = 16,256 / N 
+			xVal=16.256/yVal; 
+		}
+		if (x=="H" && y=="P3"){ //H = 0,9605 * P
+			xVal=0.9605*yVal;
+		}
+		if (x=="P3" && y=="H"){
+			xVal=yVal/0.9605;
+		}
+		if ((x=="H2" && y=="N3")||(x=="N3" && y=="H2")){ //H = 24,384 / N
+			xVal=24.384/yVal;
+		}
+		if (x=="r" && y=="P4"){//r = 0,1373 * P
+			xVal=0.1373*yVal;
+		}
+		if (x=="P4" && y=="r"){
+			xVal=yVal/0.1373;
+		}		
+		xVal=xVal.toString();
+		if ((yValContainsComma)||(!yValContainsDot)){
+			xVal=xVal.replace(/\./g , ",");
+		}		
+		document.getElementById(x).value=xVal;	
+	}
+	
+	function calculate2(x,y,z){
+	//alert('inside calculate2');
+	//alert(x);
+	//alert(y);
+	//alert(z);
+		yVal=document.getElementById(y).value;	
+		yValContainsComma=yVal.includes(",");
+		yValContainsDot=yVal.includes(".");			
+		if (yValContainsComma){
+			yVal=yVal.replace(/,/g , ".");
+		}	
+		yVal=parseFloat(yVal);	
+		zVal=document.getElementById(z).value;
+		zValContainsComma=zVal.includes(",");
+		zValContainsDot=zVal.includes(".");	
+		if (zValContainsComma){
+			zVal=zVal.replace(/,/g , ".");
+		}
+		zVal=parseFloat(zVal);
+		if (x=="DM"){ //DM = (DE + DF)/2 
+			//alert(yVal);
+			//alert(parseFloat(yVal));
+			
+			xVal=(yVal+zVal)/2;
+			document.getElementById(x).value=xVal; 
+			//alert(xVal);
+		}
+		if (x=="DM2"){ //DM = DE - D
+			xVal=yVal-zVal;
+		}
+		if (x=="DM3"){ //DM = DE - (16,256 / N)
+			xVal=yVal-(16.256 / zVal);
+		}
+		if (x=="DF2"){ //DF = DE - (1,28 * P)
+			xVal=yVal-(1.28 * zVal);
+		}
+		if (x=="DF3"){ //DF = DE - (32,512 / N)
+			xVal=yVal-(32.512 / zVal);
+		}
+		xVal=xVal.toString();
+		if ((yValContainsComma)||(!yValContainsDot)){
+			
+			xVal=xVal.replace(/\./g , ",");
+		}		
+		//xVal=xVal.toFixed(3);
+		document.getElementById(x).value=xVal;	
+	}
+</script>
+</body>
+</html>

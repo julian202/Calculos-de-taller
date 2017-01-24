@@ -1,0 +1,276 @@
+
+
+<div align="center">
+<div class="header" >
+	<a href="http://machine-shop-formulas.com/whitworth"><h4>English</h4></a>
+</div>
+<h1>
+ROSCA CON FILETE WHITWORTH
+</h1>
+<h4>
+Detalle ampliado para poder apreciar su ajuste, y fórmulas generales 
+de útil aplicación
+</h4>
+<div id="picture2" align="center">		
+	
+</div>
+
+<h3 class="underline">Designación:</h3>
+<table>
+	<tr>
+		<th><h4><strong>P</strong>  = Paso en mm.</h4></th>
+		<th><h4><strong>N</strong>  = Número de filetes por pulgada inglesa.</h4></th>
+	</tr>
+	<tr>
+		<th><h4><strong>H</strong>  = Altura del triángulo generador.</h4></th>
+		<th><h4><strong>r</strong>  = Radio</h4></th>
+	</tr>
+	<tr>
+		<th><h4><strong>D</strong>  =	Profundidad del filete.</h4></th>
+		<th><h4><strong>DE</strong> = Diámetro del tornillo.</h4></th>
+	</tr>
+	<tr>
+		<th><h4><strong>DM</strong> = Diámetro de flancos o medio. </h4></th>
+		<th><h4><strong>DF</strong> = Diámetro de fondo e interior.</h4></th>
+	</tr>
+</table>
+
+<h3 class="underline">Fórmulas y Calculadoras:</h3>
+ <div class="formula">P = 25,4 / N </div>
+ <div>
+ <input id="P" type="text" name="topictextbox" maxlength="7" size="7" value="P"> = 25,4 /
+ <input id="N" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular P" onclick="calculate('P','N');">
+<input type="submit" value="Calcular N" onclick="calculate('N','P');"></div>
+
+<div class="formula">D = 0,6403 * P </div>
+ <div>
+ <input id="D" type="text" name="topictextbox" maxlength="7" size="7" value="D"> = 0,6403 *
+ <input id="P2" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular D" onclick="calculate('D','P2');">
+<input type="submit" value="Calcular P" onclick="calculate('P2','D');"></div>
+
+<div class="formula">D = 16,256 / N </div>
+ <div>
+ <input id="D2" type="text" name="topictextbox" maxlength="7" size="7" value="D"> = 16,256 /
+ <input id="N2" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular D" onclick="calculate('D2','N2');">
+<input type="submit" value="Calcular N" onclick="calculate('N2','D2');"></div>
+
+<div class="formula">H = 0,9605 * P </div>
+ <div>
+ <input id="H" type="text" name="topictextbox" maxlength="7" size="7" value="H"> = 0,9605 *
+ <input id="P3" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular H" onclick="calculate('H','P3');">
+<input type="submit" value="Calcular P" onclick="calculate('P3','H');"></div>
+
+<div class="formula">H = 24,384 / N </div>
+ <div>
+ <input id="H2" type="text" name="topictextbox" maxlength="7" size="7" value="H"> = 24,384 /
+ <input id="N3" type="text" name="topictextbox" maxlength="7" size="7" value="N">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular H" onclick="calculate('H2','N3');">
+<input type="submit" value="Calcular N" onclick="calculate('N3','H2');"></div>
+
+<div class="formula">r = 0,1373 * P </div>
+ <div>
+ <input id="r" type="text" name="topictextbox" maxlength="7" size="7" value="r"> = 0,1373 *
+ <input id="P4" type="text" name="topictextbox" maxlength="7" size="7" value="P">
+ </div>
+ <div class="divinput"><input type="submit" value="Calcular r" onclick="calculate('r','P4');">
+ <input type="submit" value="Calcular P" onclick="calculate('P4','r');"></div>
+
+<div class="formula">DM = (DE + DF)/2 </div>
+ <div>
+ <input id="DM" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = (
+ <input id="DE" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> +
+ <input id="DF" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> ) / 2 
+</div>
+ <div class="divinput"><input type="submit" value="Calcular DM" onclick="calculate2('DM','DE','DF');">
+ </div>
+ 
+ <div class="formula">DM = DE - D </div>
+ <div>
+ <input id="DM2" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = 
+ <input id="DE2" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> -
+ <input id="D3" type="text" name="topictextbox" maxlength="7" size="7" value="D"> 
+</div>
+ <div class="divinput"><input type="submit" value="Calcular DM" onclick="calculate2('DM2','DE2','D3');">
+ </div>
+ 
+ <div class="formula">DM = DE - (16,256 / N) </div>
+ <div>
+ <input id="DM3" type="text" name="topictextbox" maxlength="7" size="7" value="DM"> = 
+ <input id="DE3" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (16,256 / 
+ <input id="N4" type="text" name="topictextbox" maxlength="7" size="7" value="N">)
+</div>
+ <div class="divinput"><input type="submit" value="Calcular DM" onclick="calculate2('DM3','DE3','N4');">
+ </div>
+ 
+ 
+ <div class="formula">DF = DE - (1,28 * P) </div>
+<div>
+ <input id="DF2" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> = 
+ <input id="DE4" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (1,28 *
+ <input id="P5" type="text" name="topictextbox" maxlength="7" size="7" value="P"> ) 
+</div>
+ <div class="divinput"><input type="submit" value="Calcular DF" onclick="calculate2('DF2','DE4','P5');">
+</div>
+ 
+
+<div class="formula">DF = DE - (32,512 / N) </div>
+<div>
+ <input id="DF3" type="text" name="topictextbox" maxlength="7" size="7" value="DF"> = 
+ <input id="DE5" type="text" name="topictextbox" maxlength="7" size="7" value="DE"> - (32,512 / 
+ <input id="N5" type="text" name="topictextbox" maxlength="7" size="7" value="N">)
+</div>
+ <div class="divinput"><input type="submit" value="Calcular DF" onclick="calculate2('DF3','DE5','N5');">
+</div>
+
+ <div id="scriptPlaceholder">
+ 
+ </div>
+ <script  type="text/javascript">
+	//width="50%";  //no need to set it here because it will be inherited from the main html file that calls this one.
+	document.getElementById("picture2").innerHTML='<img src="static/libro_268b.jpg" alt="tablas, calculos, taller"  width='+width+' /><br></div>';//idk why i can't set height properly.	
+		
+	
+	/* You don't need to check for jquery or bootstrap because you will allways load this file into another one, whether its casillasindex or another one.
+	var element =  document.getElementById('myjquery');
+	if (typeof(element) != 'undefined' && element != null)
+	{
+		console.log("myjquery exists1");
+	}else{
+		console.log("myjquery Doesnt exists1");
+		document.write('<script src="jquery-3.1.1.min.js"><\/script>');
+		//document.write('<script src="https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.11.3\/jquery.min.js"><\/script>');
+	}	
+	var element =  document.getElementById('bootstrap');
+	if (typeof(element) != 'undefined' && element != null)
+	{
+		console.log("bootstrap exists1");
+	}else{
+		console.log("bootstrap Doesnt exists1");
+		//document.getElementById('scriptPlaceholder').innerHTML = '<script src="jquery-3.1.1.min.js"><\/script>';
+		//document.write('<script src="jquery-3.1.1.min.js"><\/script>');
+		//document.write('<script src="https:\/\/ajax.googleapis.com\/ajax\/libs\/jquery\/1.11.3\/jquery.min.js"><\/script>');
+	}*/
+	
+	function calculate(x,y){
+		yVal=document.getElementById(y).value;
+		yValContainsComma=yVal.includes(",");
+		yValContainsDot=yVal.includes(".");	
+		if (yValContainsComma){
+			yVal=yVal.replace(/,/g , ".");
+		}	
+		if ((x=="P" && y=="N")||(x=="N" && y=="P")){ //P = 25,4 / N
+			xVal=25.4/yVal;
+		}			
+		if (x=="D" && y=="P2"){ //D = 0,6403 * P 
+			xVal=0.6403*yVal;
+		}
+		if (x=="P2" && y=="D"){
+			xVal=yVal/0.6403;
+		}
+		if ((x=="D2" && y=="N2")||(x=="N2" && y=="D2")){ //D = 16,256 / N 
+			xVal=16.256/yVal; 
+		}
+		if (x=="H" && y=="P3"){ //H = 0,9605 * P
+			xVal=0.9605*yVal;
+		}
+		if (x=="P3" && y=="H"){
+			xVal=yVal/0.9605;
+		}
+		if ((x=="H2" && y=="N3")||(x=="N3" && y=="H2")){ //H = 24,384 / N
+			xVal=24.384/yVal;
+		}
+		if (x=="r" && y=="P4"){//r = 0,1373 * P
+			xVal=0.1373*yVal;
+		}
+		if (x=="P4" && y=="r"){
+			xVal=yVal/0.1373;
+		}		
+		xVal=xVal.toString();
+		if ((yValContainsComma)||(!yValContainsDot)){
+			xVal=xVal.replace(/\./g , ",");
+		}		
+		document.getElementById(x).value=xVal;	
+	}
+	
+	function calculate2(x,y,z){
+	//alert('inside calculate2');
+	//alert(x);
+	//alert(y);
+	//alert(z);
+		yVal=document.getElementById(y).value;	
+		yValContainsComma=yVal.includes(",");
+		yValContainsDot=yVal.includes(".");			
+		if (yValContainsComma){
+			yVal=yVal.replace(/,/g , ".");
+		}	
+		yVal=parseFloat(yVal);	
+		zVal=document.getElementById(z).value;
+		zValContainsComma=zVal.includes(",");
+		zValContainsDot=zVal.includes(".");	
+		if (zValContainsComma){
+			zVal=zVal.replace(/,/g , ".");
+		}
+		zVal=parseFloat(zVal);
+		if (x=="DM"){ //DM = (DE + DF)/2 
+			//alert(yVal);
+			//alert(parseFloat(yVal));
+			
+			xVal=(yVal+zVal)/2;
+			document.getElementById(x).value=xVal; 
+			//alert(xVal);
+		}
+		if (x=="DM2"){ //DM = DE - D
+			xVal=yVal-zVal;
+		}
+		if (x=="DM3"){ //DM = DE - (16,256 / N)
+			xVal=yVal-(16.256 / zVal);
+		}
+		if (x=="DF2"){ //DF = DE - (1,28 * P)
+			xVal=yVal-(1.28 * zVal);
+		}
+		if (x=="DF3"){ //DF = DE - (32,512 / N)
+			xVal=yVal-(32.512 / zVal);
+		}
+		xVal=xVal.toString();
+		if ((yValContainsComma)||(!yValContainsDot)){
+			
+			xVal=xVal.replace(/\./g , ",");
+		}		
+		//xVal=xVal.toFixed(3);
+		document.getElementById(x).value=xVal;	
+	}
+		
+	
+	function calculateExample(){
+		a=document.getElementById("P").value;
+		aContainsComma=a.includes(",");
+		aContainsDot=a.includes(".");	
+		if (aContainsComma){
+			//alert("contains commma");
+			a=a.replace(/,/g , ".");
+		}		
+		//b=document.getElementById("P").value;
+		/*bContainsComma=b.includes(",");
+		bContainsDot=b.includes(".");	
+		if (bContainsComma){
+			b=b.replace(/,/g , ".");
+		}*/
+		c=25.4/a;
+		c=c.toString();
+		if ((aContainsComma)||(!aContainsDot)){
+			c=c.replace(/\./g , ",");
+		}		
+		document.getElementById("N").value=c;	
+	}
+
+</script>
+

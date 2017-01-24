@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>			
+	<title>Manual de Taller Maquinas Casillas</title>
+	<meta name="description" content="Manual tablas calculos maquinas taller.">
+	<meta name="keywords" content="Manual, tablas, taller, calculos, casillas">
+	<meta name="author" content="Casillas">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+	<!-- <link id="bootstrap" rel="stylesheet" href="static/bootstrap.min.css">-->
+	<!--v4-->
+<style>	
+	body {
+		font-size: 130%;
+	}
+	.maindiv {
+		text-align:center;
+	}
+	h1{
+		margin-top: 5px;
+		text-decoration: underline;
+	}
+	.english {margin-right: 5%; margin-top: 0px;margin-bottom: 0px;text-align:right;}
+	.show{
+		text-align:left;
+		margin: 0 auto; 
+		width: 80%;
+		
+	}
+	.hide{display:none;}
+	a {
+		color: #337ab7;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #000000;
+		background-color: #f2f3f3;
+	}
+	img {
+		max-width: 100%;
+	}
+	@media only screen and (min-width: 600px) {
+		img {
+			max-width: 50%;
+		}
+	}	
+	th {
+		text-align: left;
+		padding: 0 15px;
+	}	
+	.formula {
+		font-weight: bold;
+		font-size: 150%;		
+	}
+	input {
+		text-align: center;
+		margin-top: 10px;
+		font-size: 110%;	
+	}
+	.nav{
+		display:inline-block; width:40%;
+	}
+	.btn{
+		padding: 4px;
+		font-size: 100%;
+		border-radius: 6px;
+		color: #fff;
+		background-color: #5bc0de;
+		border-color: #46b8da;
+		border: 1px solid transparent;
+		margin-bottom: 40px;		
+	}
+	.smlbtn{
+		margin-bottom: 5px;
+		padding: 0px 8px;
+	}
+	.largebtn{
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 5px;
+	}	
+	.btn:hover {
+		background-color: #31b0d5;
+		border-color: #269abc;
+		cursor: pointer;
+	}
+	.header{
+			display: inline-block;
+			width: 45%;
+	}
+	.ir {text-align:right;}
+	.taller {text-align:left;}
+	.underline {text-decoration: underline;}
+	.feedback{text-align:right;font-size:1em;margin-right: 5em;}
+	</style>
+</head>
+<body onload='loadParameter()'>
+<div class="maindiv">
+	<div class="header taller">
+		<button type="button" onclick="indexShow()" class="btn smlbtn"> Ir a Indice de Contenidos </button>
+	</div>
+	<div class="header ir">
+		<form name="input" onsubmit="javascript:changeTextDirect(document.input.topictextbox.value); return false;"><!-- return false is to prevent reload of page -->
+			<label>Página:</label>
+			<input type="text" id="goToTextBox" name="topictextbox"  maxlength="3" size="3" value="271">
+			<input type="submit" value="Ir"  class="btn smlbtn"> 
+		</form >
+	</div>	
+		
+	<div >	
+	<!-- Casillas-principal 
+	
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		
+		<ins class="adsbygoogle"
+				 style="display:block"
+				 data-ad-client="ca-pub-6051400083837233"
+				 data-ad-slot="3027609648"
+				 data-ad-format="auto"></ins>-->
+		
+	</div>
+	
+	<div >
+		<div class="nav" >
+			<button onclick="previous()" class="btn largebtn"> &lt Anterior</button>
+		</div>
+		<div class="nav" >
+			<button onclick="next()" class="btn largebtn">Siguiente &gt  </button>
+		</div>
+	</div>
+	
+	
+	
+	
+	<div id="indice" class="show" >
+		<p style='margin: 10px 0 10px 0;padding:10px 0 0 0' > <b>Presione sobre la pagina que desea visitar:</b>   </p>	
+		<!--<p style='cursor:pointer' onclick='changeText(271)' >Rosca con filete Whitworth    <span style='color:blue'>-      Pagina 271 </span></p>-->
+		
+		<p><a style='cursor:pointer' onclick='changeText(9)' >Indice de materias    <span style='color:blue'>-      Pagina 9 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(18)' >Cuadrados, cubos, raices    <span style='color:blue'>-      Pagina 18 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(47)' >Valores de la velocidad angular    <span style='color:blue'>-      Pagina 47 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(48)' >Formulas de cinematica y dinamica    <span style='color:blue'>-      Pagina 48 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(50)' >Tablas de conversion    <span style='color:blue'>-      Pagina 50 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(50)' >Pulgadas inglesas a milimetros    <span style='color:blue'>-      Pagina 50 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(54)' >Milimetros a pulgadas inglesas    <span style='color:blue'>-      Pagina 54 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(55)' >Fracciones de pulgada a decimales    <span style='color:blue'>-      Pagina 55 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(56)' >Reduccion de fracciones ordinarias a decimales    <span style='color:blue'>-      Pagina 56 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(57)' >Decimales de avos de pulgada    <span style='color:blue'>-      Pagina 57 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(58)' >Decimales de milimetro a decimales de pulgada    <span style='color:blue'>-      Pagina 58 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(59)' >Decimales de pulgada a decimales de milimetro    <span style='color:blue'>-      Pagina 59 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(63)' >Pesos y medidas de sistema ingles a metrico    <span style='color:blue'>-      Pagina 63 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(65)' >Tabla de galgas    <span style='color:blue'>-      Pagina 65 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(67)' >Factores de conversion    <span style='color:blue'>-      Pagina 67 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(70)' >Equivalencias entre temperaturas    <span style='color:blue'>-      Pagina 70 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(72)' >Conversion de presiones    <span style='color:blue'>-      Pagina 72 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(76)' >Vapor de agua saturado    <span style='color:blue'>-      Pagina 76 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(77)' >Volumen especifico en funcion de presion y temperatura    <span style='color:blue'>-      Pagina 77 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(78)' >Calor, potencias calorificas    <span style='color:blue'>-      Pagina 78 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(79)' >Calor latente    <span style='color:blue'>-      Pagina 79 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(79)' >Dilatacion cubica    <span style='color:blue'>-      Pagina 79 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(80)' >Peso de las piezas fundidas    <span style='color:blue'>-      Pagina 80 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(80)' >Mezclas frigorificas    <span style='color:blue'>-      Pagina 80 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(81)' >Tablas trigonometricas    <span style='color:blue'>-      Pagina 81 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(81)' >Tangente y cotangente    <span style='color:blue'>-      Pagina 81 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(92)' >Senos y cosenos    <span style='color:blue'>-      Pagina 92 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(104)' >Secantes y cosecantes    <span style='color:blue'>-      Pagina 104 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(117)' >Arcos, cuerdas y flechas    <span style='color:blue'>-      Pagina 117 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(122)' >Elementos de trigonometris    <span style='color:blue'>-      Pagina 122 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(127)' >Trazado para angulos de precision    <span style='color:blue'>-      Pagina 127 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(128)' >Senos de segundos    <span style='color:blue'>-      Pagina 128 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(130)' >Areas, volumenes de figuras planas     <span style='color:blue'>-      Pagina 130 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(142)' >Centros de gravedad    <span style='color:blue'>-      Pagina 142 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(145)' >Tornillo y polea diferencial    <span style='color:blue'>-      Pagina 145 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(146)' >Palancas    <span style='color:blue'>-      Pagina 146 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(147)' >Ruedas y poleas    <span style='color:blue'>-      Pagina 147 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(148)' >Calculo de engranajes    <span style='color:blue'>-      Pagina 148 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(161)' >Tabla comparativa de pasos    <span style='color:blue'>-      Pagina 161 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(164)' >Calibre especial para medir dientes de engranaje    <span style='color:blue'>-      Pagina 164 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(166)' >Medicion de ruedas y pinones helicoidales    <span style='color:blue'>-      Pagina 166 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(168)' >Medicion de la dentadura de un engranaje por medio de un calibre corriente    <span style='color:blue'>-      Pagina 168 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(169)' >Dimensiones del diente en los pasos normales del modulo    <span style='color:blue'>-      Pagina 169 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(170)' >Tallado de ruedas rectas con dentado evolvente (fresas)    <span style='color:blue'>-      Pagina 170 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(171)' >Resistencia del diente en los engranajes    <span style='color:blue'>-      Pagina 171 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(173)' >Tratamiento termico de ruedas dentadas con dientes cementados    <span style='color:blue'>-      Pagina 173 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(174)' >Engranajes cilindricos, tolerancias de fabricacion para dentaduras fresadas o rectificadas    <span style='color:blue'>-      Pagina 174 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(176)' >Formulas generales para engranajes rectos    <span style='color:blue'>-      Pagina 176 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(180)' >Construccion de fresas tipo simple    <span style='color:blue'>-      Pagina 180 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(181)' >Trazado de los dientes    <span style='color:blue'>-      Pagina 181 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(183)' >Fresas para tallar engranajes rectos y helicoidales    <span style='color:blue'>-      Pagina 183 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(184)' >Tornillo sin-fin y su rueda    <span style='color:blue'>-      Pagina 184 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(188)' >Empujes axiales    <span style='color:blue'>-      Pagina 188 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(190)' >Engranajes helicoidales    <span style='color:blue'>-      Pagina 190 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(192)' >Angulo de las helices    <span style='color:blue'>-      Pagina 192 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(193)' >Calculo de engranajes helicoidales    <span style='color:blue'>-      Pagina 193 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(196)' >Talla de engranajes    <span style='color:blue'>-      Pagina 196 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(198)' >Ruedas y pinones de cadena    <span style='color:blue'>-      Pagina 198 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(199)' >Engranajes interiores. Cremallera    <span style='color:blue'>-      Pagina 199 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(200)' >Engranajes conicos    <span style='color:blue'>-      Pagina 200 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(208)' >Angulos del cono del diametro primitivo (alpha)    <span style='color:blue'>-      Pagina 208 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(213)' >Angulo de la cara del diente (delta)    <span style='color:blue'>-      Pagina 213 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(218)' >Talla de engranajes conicos    <span style='color:blue'>-      Pagina 218 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(220)' >Tabla numero de fresa para tallar engranajes conicos    <span style='color:blue'>-      Pagina 220 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(223)' >Cabezal divisor    <span style='color:blue'>-      Pagina 223 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(225)' >Division diferencial    <span style='color:blue'>-      Pagina 225 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(226)' >Cabezal divisor universal    <span style='color:blue'>-      Pagina 226 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(250)' >Plato divisor tipo mesa    <span style='color:blue'>-      Pagina 250 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(259)' >Fresado helicoidal    <span style='color:blue'>-      Pagina 259 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(260)' >Tabla para trabajos helicoidales    <span style='color:blue'>-      Pagina 260 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(263)' >Fresado de dientes por los lados    <span style='color:blue'>-      Pagina 263 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(264)' >Fresadora universal <Hure>    <span style='color:blue'>-      Pagina 264 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(268)' >Sistema general de roscas    <span style='color:blue'>-      Pagina 268   </span></a></p>
+		
+		
+		<p><a style='cursor:pointer' href="/whitworth">Rosca con filete Whitworth    <span style='color:blue'>-      Pagina 271 </span></a></p>
+		
+		<!--<p><a style='cursor:pointer' onclick='changeText(271)' >Rosca con filete Whitworth    <span style='color:blue'>-      Pagina 271 </span></a></p>-->
+		<p><a style='cursor:pointer' onclick='changeText(277)' >Dimensiones de cabezas de tornillo, tuercas y arandelas Whitworth    <span style='color:blue'>-      Pagina 277 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(278)' >Rosca americana sellers    <span style='color:blue'>-      Pagina 278 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(279)' >Rosca british asociation    <span style='color:blue'>-      Pagina 279 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(288)' >Perfiles de rosca para alta resistencia    <span style='color:blue'>-      Pagina 288 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(290)' >Cuchillas para roscar    <span style='color:blue'>-      Pagina 290 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(294)' >Rosca cuadrada    <span style='color:blue'>-      Pagina 294 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(302)' >Pasos metricos    <span style='color:blue'>-      Pagina 302 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(307)' >Afilado de machos para roscar    <span style='color:blue'>-      Pagina 307 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(309)' >Torneado conico. Teoria fundamental de los conos    <span style='color:blue'>-      Pagina 309 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(311)' >Torneado de conos    <span style='color:blue'>-      Pagina 311 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(315)' >Conos sistema ingles     <span style='color:blue'>-      Pagina 315 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(319)' >Conos metricos    <span style='color:blue'>-      Pagina 319 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(320)' >Conos morse    <span style='color:blue'>-      Pagina 320 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(321)' >Cono Brown & Sharp    <span style='color:blue'>-      Pagina 321 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(322)' >Casquillos    <span style='color:blue'>-      Pagina 322 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(325)' >Pasadores conicos    <span style='color:blue'>-      Pagina 325 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(326)' >Cuchillas para tornos, mandrinadoras y acepilladoras    <span style='color:blue'>-      Pagina 326 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(338)' >Cuchillas de metal duro    <span style='color:blue'>-      Pagina 338 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(344)' >Velocidades de corte, Widia    <span style='color:blue'>-      Pagina 344 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(358)' >Afilado de herramientas Widia    <span style='color:blue'>-      Pagina 358 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(364)' >Fresa de planear    <span style='color:blue'>-      Pagina 364 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(366)' >Fresa frontal para mandril    <span style='color:blue'>-      Pagina 366 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(368)' >Fresa para ranurar    <span style='color:blue'>-      Pagina 368 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(371)' >Brocas    <span style='color:blue'>-      Pagina 371 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(377)' >Diagnostico de la broca    <span style='color:blue'>-      Pagina 377 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(379)' >Brocas, Equivalencias en mm    <span style='color:blue'>-      Pagina 379 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(380)' >Cuchillas o lamas para mandrinos de taladros    <span style='color:blue'>-      Pagina 380 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(381)' >Mandrinos para taladros    <span style='color:blue'>-      Pagina 381 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(384)' >Afilado de fresas    <span style='color:blue'>-      Pagina 384 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(393)' >Muelas de esmeril, norton    <span style='color:blue'>-      Pagina 393 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(396)' >Grados de dureza, granos    <span style='color:blue'>-      Pagina 396 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(398)' >Diamantes para retornear muelas    <span style='color:blue'>-      Pagina 398 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(404)' >Limas    <span style='color:blue'>-      Pagina 404 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(408)' >Punzonado y cizallado    <span style='color:blue'>-      Pagina 408 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(409)' >Cinceles y buriles    <span style='color:blue'>-      Pagina 409  </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(410)' >Resistencia de materiales    <span style='color:blue'>-      Pagina 410 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(413)' >Traccion    <span style='color:blue'>-      Pagina 413 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(416)' >Resistencia de materiales, ingles    <span style='color:blue'>-      Pagina 416 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(418)' >Dureza, Rockwell y Brinell    <span style='color:blue'>-      Pagina 418 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(421)' >Probetas de traccion para ensayo de materiales    <span style='color:blue'>-      Pagina 421 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(423)' >Dureza, equivalencias    <span style='color:blue'>-      Pagina 423 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(435)' >Resistencias practicas, factores de seguridad de metales    <span style='color:blue'>-      Pagina 435 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(438)' >Materiales    <span style='color:blue'>-      Pagina 438 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(439)' >Acero    <span style='color:blue'>-      Pagina 439 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(447)' >Resortes    <span style='color:blue'>-      Pagina 447 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(453)' >Coeficientes de dilatacion    <span style='color:blue'>-      Pagina 453 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(455)' >Coeficientes de contraccion    <span style='color:blue'>-      Pagina 455 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(457)' >Cargas que pueden soportar los tornillos    <span style='color:blue'>-      Pagina 457 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(458)' >Momentos de inercia y resistencia    <span style='color:blue'>-      Pagina 458 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(460)' >Cortes transversales    <span style='color:blue'>-      Pagina 460 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(461)' >Cementacion    <span style='color:blue'>-      Pagina 461  </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(465)' >Cementacion parcial    <span style='color:blue'>-      Pagina 465 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(468)' >Pesos y datos de materiales    <span style='color:blue'>-      Pagina 468   </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(469)' >Denominacion de hierros comerciales    <span style='color:blue'>-      Pagina 469 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(502)' >Datos generales    <span style='color:blue'>-      Pagina 502 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(503)' >Chavetas sistema woodroff    <span style='color:blue'>-      Pagina 503 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(506)' >Roblones o remaches    <span style='color:blue'>-      Pagina 506 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(508)' >Remachado    <span style='color:blue'>-      Pagina 508 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(510)' >Transmission por correa, Calculo    <span style='color:blue'>-      Pagina 510 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(518)' >Cadenas    <span style='color:blue'>-      Pagina 518 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(521)' >Cancamos de hierro forjado    <span style='color:blue'>-      Pagina 521 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(525)' >Sistema de ajuste Isa    <span style='color:blue'>-      Pagina 525 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(528)' >Complementos sobre ajustes    <span style='color:blue'>-      Pagina 528 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(530)' >Eleccion de ajustes Isa    <span style='color:blue'>-      Pagina 530 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(548)' >Ejemplos de aplicacion    <span style='color:blue'>-      Pagina 548 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(550)' >Tolerancias de rodamientos    <span style='color:blue'>-      Pagina 550 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(556)' >Limites de exactitud de calibres planos o galgas blocks    <span style='color:blue'>-      Pagina 556 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(561)' >Calibres    <span style='color:blue'>-      Pagina 561 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(572)' >Transportador Universal. Lectura del nonio.    <span style='color:blue'>-      Pagina 572 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(576)' >Medicion de tornillos sin-fin    <span style='color:blue'>-      Pagina 576 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(577)' >Verificacion de maquinas, tornos    <span style='color:blue'>-      Pagina 577 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(587)' >Velocidades y Avances para maquinas-herramientas    <span style='color:blue'>-      Pagina 587 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(619)' >Lubricantes    <span style='color:blue'>-      Pagina 619 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(623)' >Equivalencias fraccion de hora sexagesimal y decimal    <span style='color:blue'>-      Pagina 623 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(624)' >Calculador    <span style='color:blue'>-      Pagina 624 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(630)' >Reparacion de automobiles    <span style='color:blue'>-      Pagina 630 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(635)' >Clasificacion de aceros para diversas piezas    <span style='color:blue'>-      Pagina 635 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(637)' >Correas trapezoidales    <span style='color:blue'>-      Pagina 637 </span></a></p>
+		<p><a style='cursor:pointer' onclick='changeText(639)' >Fresado de camones o levas    <span style='color:blue'>-      Pagina 639 </span></a></p>
+		
+		<p><a href="https://convertir-miliamperios-vatios.appspot.com/">Convertir mAh a Wh (milliamp hour a watt hour) (Espa&ntilde;ol)</a><a href="http://milliamps-watts.appspot.com/">(Ingl&eacute;s)</a>	</p>
+		
+		<p><a href="http://convert-kwh-hp.appspot.com/">Convertir kwh (kilowatt hour) a hp (horsepower) (Ingl&eacute;s)</a></p>
+		
+		<p><a href="http://convertir-sueldo-hora-ano.appspot.com/">Convertir paga/salario por hora a por a&ntilde;o (Espa&ntilde;ol)</a><a href="http://convert-pay-hour-yearly.appspot.com">(Ingl&eacute;s)</a></p>
+		
+		<p><a href="http://convertir-salario-hora-mes.appspot.com/">Convertir paga/salario por hora a por mes (Espa&ntilde;ol)</a><a href="http://convert-pay-hour-monthly.appspot.com">(Ingl&eacute;s)</a> </p>
+		
+	</div>
+	<div id="placeholder" align="center">	
+	 <!--<img src="pics/libro_241.jpg" alt="tablas, calculos, taller"  style="width:100%; height:100%;" >-->
+	</div>
+	
+</div>
+<hr>
+
+<div class=feedback><p>Si tiene alguna sugerencia esribanos a: <a target=_top href="mailto:casillasmaquinas@gmail.com?Subject=Sugerencia" target=_top>casillasmaquinas@gmail.com</a></p></div><div class=ad></div>
+  
+	<script  type="text/javascript">
+	var a=0;
+	var myval=1;
+	var width="";//used later for setting picture width.
+	function loadParameter(){
+		str=document.location.href;
+		if (str.includes("whitworth")){
+			myval=268;
+			//setPicture();
+		}
+		else{
+			res=str.split("=");
+			loadPage=res[1];
+			if (loadPage === undefined){
+				//alert("its undefined");
+			}
+			else{
+				myval=loadPage-3;
+				setPicture();
+			}	
+		}
+	}	
+	function setPicture(){
+		document.getElementById("goToTextBox").value=Number(myval)+3;
+		indexHide();
+		a=1;
+		if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+			width="100%";
+		}
+		else{
+			width="50%";
+		}
+		if ([268].includes(parseInt(myval))){
+			//document.getElementById("placeholder").style.visibility = "visible";		
+			//$( "#placeholder" ).load( "static/Myval"+myval+".htm" );	//note: this .load() jquery  function can make a callback call that you could use to see if it was succeesful.	
+			window.location.href = "/whitworth";
+		}
+		else{
+			document.getElementById("placeholder").innerHTML='<img src="static/libro_'+myval+'.jpg" alt="tablas, calculos, taller"  width='+width+' height='+width+'/><br></div>';
+		}
+		console.log('Num'+myval+'EndNum');
+	}
+	function changeText(str){	
+		myval=String(str-3);
+		//alert(myval);
+		setPicture();	
+		//ga('send', 'event', 'button', 'clicked', 'Num'+str+'EndNum');		
+	}
+	function changeTextDirect(str){
+		//ga('send', 'event', 'button', 'textbox', 'Num'+str+'EndNum');
+		if (str==271){
+			window.location.href = "/whitworth";
+		}
+		else{
+			myval=String(str-3);
+			setPicture();	
+		}
+	}
+	function next(){
+		myval=parseInt(myval)+1;
+		setPicture();
+		//ga('send', 'event', 'button', 'arrow', 'Num'+myval+'EndNum');
+	}
+	function previous(){
+		myval=parseInt(myval)-1;
+		setPicture();
+		//ga('send', 'event', 'button', 'arrow', 'Num'+myval+'EndNum');
+	}
+	function indexShow(){
+		if (a==1){
+		document.getElementById("indice").className="show";
+		a=0;
+		}
+		else{
+		document.getElementById("indice").className="hide";
+		a=1;
+		}
+	}
+	function indexHide(){
+		document.getElementById("indice").className="hide";
+	}
+	/*
+	//// Google Analytics Code For Calculos-Taller property:////////////
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-37398568-2', 'calculos-taller.appspot.com');
+	  ga('send', 'pageview');
+	///////////////////////////////////////
+	*/
+	
+</script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>-->
+<!--<script id="myjquery" src="static/jquery-3.1.1.min.js"></script>-->
+<script>
+	(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</body>
+</html>
